@@ -4,14 +4,22 @@ const bcrypt = require('bcrypt');
 class ClienteModelo {
   // funcion para crear nuevos clientes
   static async crearClientes(doc, name, tel, email, contras) {
+<<<<<<< HEAD
     const query = 'INSERT INTO usuarios (documento, nombres, telefono, correo, contrasena, fechaCreacion) VALUES (?, ?, ?, ?, ?, ?)';
+=======
+    const query = 'INSERT INTO usuarios (documento, nombres, telefono, correo, contrasena) VALUES (?, ?, ?, ?, ?)';
+>>>>>>> 1940c0cefbf6091c49622843967090284db46e59
 
     try {
       // Generar el hash de la contraseña con bcrypt
       const salto = 10; // Nivel de seguridad de encriptación
       const contra = await bcrypt.hash(contras, salto);
 
+<<<<<<< HEAD
       return await dbService.query(query, [doc, name, tel, email, contra, new Date()]);
+=======
+      return await dbService.query(query, [doc, name, tel, email, contra]);
+>>>>>>> 1940c0cefbf6091c49622843967090284db46e59
     } catch (err) {
       throw new Error(`Error al crear su nueva cuenta: ${err.message}`);
     }

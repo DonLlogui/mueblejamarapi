@@ -3,7 +3,11 @@ const cors = require('cors');
 const rutacliente = require('./vista/ClientesRuta');
 //const path = require('path');
 const app = express();
+<<<<<<< HEAD
 const PORT = process.env.PORT || 2222;
+=======
+const PORT = process.env.PORT || 3333;
+>>>>>>> 1940c0cefbf6091c49622843967090284db46e59
 
 // Middleware
 app.use(cors({
